@@ -9,20 +9,16 @@ with sync_playwright() as playwright:
     page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
 
     # Заполняем поле email
-    email_input = page.get_by_test_id('registration-form-email-input').locator('input')
-    email_input.fill("user.name@gmail.com")
-
-    # Заполняем поле пользователь
-    password_input = page.get_by_test_id('registration-form-username-input').locator('input')
-    password_input.fill("password")
+    registration_email_input = page.get_by_test_id('registration-form-email-input').locator('input')
+    registration_email_input.fill("user.name@gmail.com")
 
     # Заполняем поле пароль
-    password_input = page.get_by_test_id('registration-form-password-input').locator('input')
-    password_input.fill("password")
+    registration_password_input = page.get_by_test_id('registration-form-password-input').locator('input')
+    registration_password_input.fill("password")
 
     # Нажимаем на кнопку Registration
-    login_button = page.get_by_test_id('registration-page-registration-button')
-    login_button.click()
+    registration_login_button = page.get_by_test_id('registration-page-registration-button')
+    registration_login_button.click()
 
     # Проверяем, что появилось сообщение об ошибке
     dashboard_header = page.get_by_test_id('dashboard-toolbar-title-text')
