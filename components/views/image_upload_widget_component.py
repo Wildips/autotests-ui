@@ -5,6 +5,7 @@ from components.views.empty_view_component import EmptyViewComponent
 from elements.button import Button
 from elements.file_input import FileInput
 from elements.icon import Icon
+from elements.image import Image
 from elements.text import Text
 
 
@@ -14,7 +15,7 @@ class ImageUploadWidgetComponent(BaseComponent):
 
         self.preview_empty_view = EmptyViewComponent(page, identifier)
 
-        self.preview_image = Icon(page, f'{identifier}-image-upload-widget-preview-image', 'Preview image')
+        self.preview_image = Image(page, f'{identifier}-image-upload-widget-preview-image', 'Preview image')
 
         self.image_upload_info_icon = Icon(
             page,
